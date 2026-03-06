@@ -47,6 +47,19 @@ class Tenant(BaseModel):
         assert isinstance(data, dict), "Expected a dictionary of tenants"
         return {key: Tenant(**tenant) for key, tenant in data.items()}
     
+class Bill(BaseModel):
+    amount_pln: float
+    date_due: str
+    apartment: str
+    type: str
+
+    @staticmethod
+    def from_json_file(file_path: str) -> List['Bill']:
+        data = None
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        assert isinstance(data, list), "Expected a list of bills"
+        return [Bill(**bill) for bill in data]
 
 class Manager:
     def __init__(self, parameters: Parameters):

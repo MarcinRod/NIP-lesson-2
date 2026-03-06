@@ -1,0 +1,14 @@
+[
+    {
+        "amount_pln": 760.00,
+        "date_due": "2025-02-01",
+        "apartment": "apart-polanka",
+        "type": "rent"
+    },
+    {
+        "amount_pln": 760.00,
+        "date_due": "2025-02-01",
+        "apartment": "apart-polanka",
+        "type": "rent"
+    }
+]
